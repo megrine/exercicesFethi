@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>TechSky</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../style/index.css">
+</head>
+
+<body>
+<div class="container-fluid">
+    <h1 class="text-center alert alert-danger">ECF 2</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <h4 class="text-center alert alert-info">Ajout Utilisateur</h4>
+            <form method="POST">
+                <input type="hidden" name="" value="" class="sid" id="id_utilisateur">
+                <input type="hidden" id="studi" name="stuid"/>
+               <div class="form-group">
+                    <label for="fname">Nom</label>
+                    <input type="text" class="form-control" required="" id="fname">
+                </div>
+
+                <div class="form-group">
+                    <label for="lname">Prenom</label>
+                    <input type="text" class="form-control" required="" id="lname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" required="" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Telephone</label>
+                    <input type="text" class="form-control" required="" id="telephone" maxlength="10">
+                </div>
+
+                <button type="button" class="btn btn-primary" id="btnsave">Ajouter</button>
+                <div id="editModal">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="emodalbutton">Fermer</button>
+                    <input type="button" value="Mettre à jour" class="btn btn-success save-student" id="submit">
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-7">
+            <h4 id="userTable" class="text-center alert alert-info">Liste des  utilisateurs </h4>
+            <div>
+                <table class="table table-hover" aria-describedby="userTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody" class="utilisateurList">
+
+                    </tbody>
+                </table>
+            </div>
+            <!--- First name modal -->
+            <div class="modal" tabindex="-1" role="dialog" id="fnameModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-danger">Information Requise</h5>
+
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-primary">Veuillez entrer un Nom</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="fmodalbutton">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- End of First name modal -->
+            <!--- Last name modal -->
+            <div class="modal" tabindex="-1" role="dialog" id="lnameModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-danger">Information Requise</h5>
+
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-primary">Veuillez entrer un Prenom</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="lmodalbutton">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- End of Last name modal -->
+            <!--- email name modal -->
+            <div class="modal" tabindex="-1" role="dialog" id="cnameModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-danger">Information Requise</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-primary">Veuillez entrer un Email</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cmodalbutton">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- End of email name modal -->
+
+            <!--- telephone name modal -->
+            <div class="modal" tabindex="-1" role="dialog" id="tnameModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-danger">Information Requise</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-primary">Veuillez entrer un numéro de téléphone</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="tmodalbutton">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--- End of email name modal -->
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+<script src="../script/utilisateur.js"></script>
+</body>
+</html>
